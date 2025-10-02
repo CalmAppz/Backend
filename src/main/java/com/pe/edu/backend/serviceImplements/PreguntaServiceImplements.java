@@ -1,6 +1,7 @@
 package com.pe.edu.backend.serviceImplements;
 
 import com.pe.edu.backend.entities.Pregunta;
+import com.pe.edu.backend.entities.TestsPsicologico;
 import com.pe.edu.backend.repositories.IPreguntaRepository;
 import com.pe.edu.backend.serviceInterfaces.PreguntaService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,5 +33,10 @@ public class PreguntaServiceImplements implements PreguntaService {
     @Override
     public void update(Pregunta pregunta) {
         iPreguntaRepository.save(pregunta);
+    }
+
+    @Override
+    public Pregunta listarId(int id) {
+        return iPreguntaRepository.findById(id).orElse(new Pregunta());
     }
 }

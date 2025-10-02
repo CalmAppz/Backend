@@ -33,4 +33,9 @@ public class TestsPsicologicoServiceImplements implements TestsPsicologicoServic
     public void update(TestsPsicologico testsPsicologico) {
         iTestsPsicologicoRepository.save(testsPsicologico);
     }
+
+    @Override
+    public TestsPsicologico listarId(int id) {
+        return iTestsPsicologicoRepository.findById(id).orElse(new TestsPsicologico());
+    }
 }

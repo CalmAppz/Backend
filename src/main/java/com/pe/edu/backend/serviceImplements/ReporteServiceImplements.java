@@ -1,6 +1,7 @@
 package com.pe.edu.backend.serviceImplements;
 
 import com.pe.edu.backend.entities.Reporte;
+import com.pe.edu.backend.entities.TestsPsicologico;
 import com.pe.edu.backend.repositories.IReporteRepository;
 import com.pe.edu.backend.serviceInterfaces.ReporteService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,5 +33,10 @@ public class ReporteServiceImplements implements ReporteService {
     @Override
     public void update(Reporte reporte) {
         reporteRepository.save(reporte);
+    }
+
+    @Override
+    public Reporte listarId(int id) {
+        return reporteRepository.findById(id).orElse(new Reporte());
     }
 }

@@ -1,6 +1,7 @@
 package com.pe.edu.backend.serviceImplements;
 
 import com.pe.edu.backend.entities.Intermediario_usergrado;
+import com.pe.edu.backend.entities.TestsPsicologico;
 import com.pe.edu.backend.repositories.IIntermediario_usergradoRepository;
 import com.pe.edu.backend.serviceInterfaces.Intermediario_usergradoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,5 +33,10 @@ public class Intermediario_usergradoServiceImplements implements Intermediario_u
     @Override
     public void update(Intermediario_usergrado intermediarioUsergrado) {
         intermediario_usergradoRepository.save(intermediarioUsergrado);
+    }
+
+    @Override
+    public Intermediario_usergrado listarId(int id) {
+        return intermediario_usergradoRepository.findById(id).orElse(new Intermediario_usergrado());
     }
 }

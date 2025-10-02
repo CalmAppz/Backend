@@ -1,6 +1,7 @@
 package com.pe.edu.backend.serviceImplements;
 
 import com.pe.edu.backend.entities.PuntajesPorPregunta;
+import com.pe.edu.backend.entities.TestsPsicologico;
 import com.pe.edu.backend.repositories.IPuntajesPorPreguntaRepository;
 import com.pe.edu.backend.serviceInterfaces.PuntajePorPreguntaService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,5 +33,10 @@ public class PuntajePorPreguntaServiceImplements implements PuntajePorPreguntaSe
     @Override
     public void update(PuntajesPorPregunta puntajePorPregunta) {
         puntajesPorPreguntaRepository.save(puntajePorPregunta);
+    }
+
+    @Override
+    public PuntajesPorPregunta listarId(int id) {
+        return puntajesPorPreguntaRepository.findById(id).orElse(new PuntajesPorPregunta());
     }
 }
