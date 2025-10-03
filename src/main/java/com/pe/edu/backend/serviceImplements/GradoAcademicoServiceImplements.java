@@ -1,7 +1,5 @@
 package com.pe.edu.backend.serviceImplements;
-
 import com.pe.edu.backend.entities.GradoAcademico;
-import com.pe.edu.backend.entities.TestsPsicologico;
 import com.pe.edu.backend.repositories.IGradoAcademicoRepository;
 import com.pe.edu.backend.serviceInterfaces.GradoAcademicoService;
 import org.springframework.beans.factory.annotation.Autowired;

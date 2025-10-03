@@ -1,5 +1,4 @@
-package com.pe.edu.backend.Controllers;
-
+package com.pe.edu.backend.controllers;
 import com.pe.edu.backend.DTOS.UsersDTO;
 import com.pe.edu.backend.entities.Users;
 import com.pe.edu.backend.serviceInterfaces.IUserServices;
@@ -10,7 +9,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -21,8 +19,19 @@ public class UsersController {
     @Autowired
     private IUserServices uS;
 
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
-
+    @PostMapping("/Registro")
+    public ResponseEntity<UsersDTO> registrar(@RequestBody UsersDTO userDTO) {
+        ModelMapper m = new ModelMapper();
+        Users us = m.map(userDTO, Users.class);
+        String encodedPassword = passwordEncoder.encode(us.getPassword());
+        us.setPassword(encodedPassword);
+        Users newUser = uS.insert(us);
+        UsersDTO userResponse = m.map(newUser, UsersDTO.class);
+        return new ResponseEntity<>(userResponse, HttpStatus.CREATED);
+    }
 
 
     @GetMapping //listar

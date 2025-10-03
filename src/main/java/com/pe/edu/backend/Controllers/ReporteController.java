@@ -1,4 +1,4 @@
-package com.pe.edu.backend.Controllers;
+package com.pe.edu.backend.controllers;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;

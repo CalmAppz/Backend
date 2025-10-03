@@ -1,7 +1,5 @@
 package com.pe.edu.backend.serviceImplements;
-
 import com.pe.edu.backend.entities.Intermediario_usergrado;
-import com.pe.edu.backend.entities.TestsPsicologico;
 import com.pe.edu.backend.repositories.IIntermediario_usergradoRepository;
 import com.pe.edu.backend.serviceInterfaces.Intermediario_usergradoService;
 import org.springframework.beans.factory.annotation.Autowired;
