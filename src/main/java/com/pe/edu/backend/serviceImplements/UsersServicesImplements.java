@@ -30,7 +30,7 @@ public class UsersServicesImplements implements IUserServices {
 
         // Crear el rol y asociarlo al usuario recién creado
         Roles role = new Roles();
-        role.setRol("ESTUDIANTE"); // Rol predeterminado
+        role.setRol("STUDENT"); // Rol predeterminado
         role.setUser(savedUser); // Asocia el usuario al rol
         rR.save(role); // Guarda el rol en la base de datos
 

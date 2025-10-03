@@ -35,7 +35,6 @@ public class UsersController {
 
 
     @GetMapping //listar
-    @PreAuthorize("hasAnyAuthority('ADMIN')")
     public List<UsersDTO> list(){
         return uS.list().stream().map(y->{
             ModelMapper m = new ModelMapper();

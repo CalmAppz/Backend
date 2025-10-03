@@ -25,10 +25,11 @@ public class Users implements Serializable {
     private String nombresapellidos;
     @Column(length = 100)
     private String correo;
-    @Column(length = 200)
+    @Column(length = 200, nullable = true) // Permite que el campo sea nulo
     private String colegio;
-    @Column(length = 200)
+    @Column(length = 200, nullable = true) // Permite que el campo sea nulo
     private String foto;
+    @Column(nullable = true) // Permite que el campo sea nulo (sin longitud especificada)
     private String grado;
     @Column(length = 100)
     private Boolean enabled;
